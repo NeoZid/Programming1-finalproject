@@ -1,19 +1,20 @@
+import java.util.ArrayList;
 
 /**
- * Write a description of class Activities here.
+ * Write a description of class Activity here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Activities
+public class Activity
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class Activities
+     * Constructor for objects of class Activity
      */
-    public Activities()
+    public Activity()
     {
         // initialise instance variables
         x = 0;
@@ -29,5 +30,9 @@ public class Activities
     {
         // put your code here
         return x + y;
+    }
+     public ArrayList<PoweredActivity> getPowerActivities() 
+    {
+        
     }
 }
