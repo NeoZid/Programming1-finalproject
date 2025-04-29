@@ -19,14 +19,11 @@ public class Athlete
     /**
      * Constructor for objects of class Athlete
      */
-    public Athlete(String name, Gender gender, int age, double weight)
+    public Athlete()
     {
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
-        this.weight = weight;
-        this.athletes = new ArrayList<>();
-        this.activities = new ArrayList<>();
+        
+        // this.athletes = new ArrayList<>();
+        // this.activities = new ArrayList<>();
     }
 
     public String getName(){
@@ -34,6 +31,7 @@ public class Athlete
     }
     
     public void listAllAthletes(){
+        
         System.out.println(athletes);
     }
     

@@ -8,24 +8,29 @@ import java.util.ArrayList;
  */
 public class Activity
 {
-    // instance variables - replace the example below with your own
     private String name;
     private transportationMode mode;
-    private ArrayList<PoweredActivity> poweredActivity;
-    private ArrayList<RegularActivity> regularActivity;
+    private ArrayList<String> poweredActivity;
+    private ArrayList<String> regularActivity;
 
      /**
      * Constructor for objects of class Activity
      */
-    public Activity(String name, transportationMode mode)
+    public Activity()
     {
-        this.name= name;
-        this.mode = mode;
-        this.poweredActivity = new ArrayList<>();
-        this.regularActivity = new ArrayList<>();
+        // this.name= name;
+        // this.mode = mode;
+        // poweredActivity = new ArrayList<>();
+        // regularActivity = new ArrayList<>();
     }
     
-    public String getName(){
-        return name;
+    public void activityDetail(){
+        // prints brief details on the activites
     }
+    
+    public void chooseActivity(){
+        // choose between Regular/Power activities
+    }
+    
+    
 }

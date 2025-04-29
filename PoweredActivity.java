@@ -7,18 +7,12 @@
  */
 public class PoweredActivity extends Activity
 {
-    // instance variables - replace the example below with your own
-    private Equipment equipment;
+    public PoweredActivity(){
     
-    /**
-     * Constructor for objects of class PoweredActivity
-     */
-    public PoweredActivity(String name, Equipment equipment)
-    {
-        // initialise instance variables
-        super(name, mode);
-        this.equipment = equipment;
     }
-
+    
+    public void chooseEquipment(){
+        // choose between Bikes, Ebikes, Rollerskates etc
+    }
     
 }

@@ -7,16 +7,10 @@
  */
 public class RegularActivity extends Activity
 {
-    // instance variables - replace the example below with your own
+    public RegularActivity(){
     
-    public RegularActivity(String name)
-    {
-        // initialise instance variables
-        this.name = name;
-    }
-    public String getName(){
-         return name; 
     }
     
+    // methods to be added
 }
 
