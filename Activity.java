@@ -9,30 +9,23 @@ import java.util.ArrayList;
 public class Activity
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private String name;
+    private transportationMode mode;
+    private ArrayList<PoweredActivity> poweredActivity;
+    private ArrayList<RegularActivity> regularActivity;
 
-    /**
+     /**
      * Constructor for objects of class Activity
      */
-    public Activity()
+    public Activity(String name, transportationMode mode)
     {
-        // initialise instance variables
-        x = 0;
+        this.name= name;
+        this.mode = mode;
+        this.poweredActivity = new ArrayList<>();
+        this.regularActivity = new ArrayList<>();
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
-     public ArrayList<PoweredActivity> getPowerActivities() 
-    {
-        
+    
+    public String getName(){
+        return name;
     }
 }
