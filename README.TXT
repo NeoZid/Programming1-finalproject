@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
+This is a prototype for atheletes, similar to the popular app Strava. 
+It provides a specific activity to the athlete so they can optimize their training properly.
+The project contains different sorts of activities, ranging from regular to powered activites.
 ------------------------------------------------------------------------
 
 PROJECT TITLE: Programming Final Project
@@ -13,5 +13,5 @@ digram to design the stucture of our program.
 Then, we translated the digram into Java by creating the main classes, enums, feilds, and methods.
 Now, we are completing the full project by implemting the logic, tesing it
 using a driver class, and preparing documentation like the README and Javadoc.
-AUTHORS: kimia, Neo
-USER INSTRUCTIONS:
+AUTHORS: Kimia, Neo
+USER INSTRUCTIONS: (to be added when methods are created)
