@@ -2,7 +2,7 @@
 /**
  * Write a description of class Application here.
  *
- * @author (your name)
+ * Neo / Kimia
  * @version (a version number or a date)
  */
 public class Application
