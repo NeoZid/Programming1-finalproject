@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class Application here.
@@ -16,12 +17,24 @@ public class Application
      */
     public Application()
     {
-        
+        ArrayList<String> athletes = new ArrayList<>();
+        athletes.add("Neo");
+        athletes.add("Kimia");
     }
+    
     
     public void athleteSignup(String name, int age, double weight){
         this.name = name;
         this.age = age;
         this.weight = weight;
+    }
+    
+    public void listAllAthletes(){
+        ArrayList<String> athletes = new ArrayList<>();
+        athletes.add("Neo");
+        athletes.add("Kimia");
+        for (String i : athletes) {
+            System.out.println(i);
+        }
     }
 }
