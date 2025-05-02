@@ -9,7 +9,7 @@ public class ApplicationMain
 {
     public static void main(String[] args){
         Application application = new Application();
-        Athlete athlete = new Athlete();
+        // Athlete athlete = new Athlete();
     }
     
     

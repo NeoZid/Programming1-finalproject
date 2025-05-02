@@ -13,27 +13,35 @@ public class Athlete
     private int age;
     private double weight;
     private ArrayList<Activity> activities;
-    private ArrayList<String> athletes;
+    private ArrayList<Athlete> athletes = new ArrayList<>();
     
 
     /**
      * Constructor for objects of class Athlete
      */
-    public Athlete()
+    public Athlete(String name, int age, double weight, Gender gender)
     {
-        
-        // this.athletes = new ArrayList<>();
-        // this.activities = new ArrayList<>();
-    }
-
-    public String getName(){
-        return name;
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.gender = gender; 
+        //athletes = new ArrayList<>();
     }
     
-    public void listAllAthletes(){
-        
-        System.out.println(athletes);
+    public String toString(){
+         return name;
     }
+    
+    
+    // public void athleteSignup(String name, int age, double weight, Gender gender){
+        // this.name = name;
+        // this.age = age;
+        // this.weight = weight;
+        // this.gender = gender;
+        
+        
+    // }
+    
     
     public void activityList()
     {
