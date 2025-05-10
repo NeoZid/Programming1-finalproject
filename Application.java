@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Scanner;
 /**
  * Write a description of class Application here.
  *
@@ -13,13 +13,35 @@ public class Application
     private int age;
     private double weight;
     private static ArrayList<Athlete> athletes;
-    
+    private Scanner scanner;
     /**
      * Constructor for objects of class Application
      */
     public Application()
     {
+        Scanner scanner = new Scanner(System.in);
         athletes = new ArrayList<>();
+        
+        printWelcome();
+    }
+    
+    public void printWelcome(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to StrongAF, an application that records your workout!");
+        System.out.println("What would you like to do today?");
+        System.out.println("Select from the following:");
+        System.out.println("SignUp");
+        System.out.println("ListAthletes");
+        String option = scanner.nextLine();
+        System.out.println("You chose" + option);
+        // switch (option) {
+            // case "SignUp":
+                // System.out.println("test");
+                // break;
+            // case "ListAthletes":
+                // listAllAthletes();
+                // break;
+        // }
     }
     
     public void athleteSignup(String name, int age, double weight, Gender gender){
@@ -27,16 +49,11 @@ public class Application
         athletes.add(athletesList);    
     }
     
-    
-    
     public void listAllAthletes(){
         System.out.println("Here's all of the athletes that signed up:");
-
         for (int i =0; i < athletes.size(); i++) {
             System.out.println(athletes.get(i));
         }
-        
-        
     }
     
     

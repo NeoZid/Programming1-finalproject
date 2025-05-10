@@ -12,8 +12,6 @@ public class Athlete
     private Gender gender;
     private int age;
     private double weight;
-    private ArrayList<Activity> activities;
-    private ArrayList<Athlete> athletes = new ArrayList<>();
     
 
     /**
@@ -30,22 +28,6 @@ public class Athlete
     
     public String toString(){
          return name;
-    }
-    
-    
-    // public void athleteSignup(String name, int age, double weight, Gender gender){
-        // this.name = name;
-        // this.age = age;
-        // this.weight = weight;
-        // this.gender = gender;
-        
-        
-    // }
-    
-    
-    public void activityList()
-    {
-        System.out.println("Regular activies include:");
     }
     
     
