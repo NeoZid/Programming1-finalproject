@@ -13,6 +13,7 @@ public class Application
     private int age;
     private double weight;
     private static ArrayList<Athlete> athletes;
+    private ArrayList<Activity> activities;
     private Scanner scanner;
     /**
      * Constructor for objects of class Application
@@ -53,6 +54,18 @@ public class Application
             System.out.println(athletes.get(i));
         }
     }
+    public void activityCreation(String name, transportationMode mode, PoweredActivity poweredActivity){
+        Activity activityList = new Activity(name, mode);
+        activities.add(activityList);    
+    }
     
+     public void activityList()
+    {
+        System.out.println("Regular activies include:");
+        
+        for (int i =0; i < activities.size(); i++) {
+            System.out.println(activities.get(i));
+        }
+    }
     
 }

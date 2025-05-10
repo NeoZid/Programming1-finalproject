@@ -16,11 +16,11 @@ public class Activity
      /**
      * Constructor for objects of class Activity
      */
-    public Activity()
+    public Activity(String name, transportationMode mode)
     {
-        // this.name= name;
-        // this.mode = mode;
-        // poweredActivity = new ArrayList<>();
+        this.name= name;
+        this.mode = mode;
+        poweredActivity = new ArrayList<>();
         // regularActivity = new ArrayList<>();
     }
     
