@@ -24,4 +24,10 @@ public class Athlete
         this.weight = weight;
         this.gender = gender; 
     }
+    
+    public String toString(){
+         return name;
+    }
+    
+    
 }

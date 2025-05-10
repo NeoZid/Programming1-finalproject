@@ -8,7 +8,7 @@
 public class PoweredActivity extends Activity
 {
     public PoweredActivity(){
-    
+    super("",transportationMode.BIKING);
     }
     
     public void chooseEquipment(){

@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Application
 {
     private static ArrayList<Athlete> athletes;
+    private ArrayList<Activity> activities;
     private Scanner scanner;
     private Gender gender;
     /**
@@ -65,11 +66,28 @@ public class Application
             System.out.println(athlete);
         }
     }
+    public void activityCreation(String name, transportationMode mode, PoweredActivity poweredActivity){
+        Activity activityList = new Activity(name, mode);
+        activities.add(activityList);    
+    }
     
+
     public void quit(){
         String name;
         if (scanner.equals("quit")) {
             scanner.close();
         }
     }
+    public void activityCreation(String name, transportationMode mode){
+        Activity activityList = new Activity(name, mode);
+        activities.add(activityList);    
+    }
+     public void activityList()
+    {
+        System.out.println("Regular activies include:");
+        for (int i =0; i < activities.size(); i++) {
+            System.out.println(activities.get(i));
+        }
+    }
+    
 }
