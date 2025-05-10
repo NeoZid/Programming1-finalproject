@@ -17,18 +17,11 @@ public class Athlete
     /**
      * Constructor for objects of class Athlete
      */
-    public Athlete(String name, int age, double weight, Gender gender)
+    public Athlete(String name, int age, double weight /*Gender gender*/)
     {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.gender = gender; 
-        //athletes = new ArrayList<>();
     }
-    
-    public String toString(){
-         return name;
-    }
-    
-    
 }
