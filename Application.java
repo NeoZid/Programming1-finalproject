@@ -32,16 +32,14 @@ public class Application
         System.out.println("Select from the following:");
         System.out.println("SignUp");
         System.out.println("ListAthletes");
-        String option = scanner.nextLine();
-        System.out.println("You chose" + option);
-        // switch (option) {
-            // case "SignUp":
-                // System.out.println("test");
-                // break;
-            // case "ListAthletes":
-                // listAllAthletes();
-                // break;
-        // }
+        switch (scanner.next()) {
+            case "SignUp":
+                System.out.println("test");
+                break;
+            case "ListAthletes":
+                listAllAthletes();
+                break;
+        }
     }
     
     public void athleteSignup(String name, int age, double weight, Gender gender){
