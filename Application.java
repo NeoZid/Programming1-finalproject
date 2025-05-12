@@ -30,12 +30,16 @@ public class Application
         System.out.println("Select from the following");
         System.out.println("SignUp");
         System.out.println("ListAthletes");
+        System.out.println("ChooseActivity");
         switch (scanner.next()) {
             case "SignUp":
                 athleteSignup();
                 break;
             case "ListAthletes":
                 listAllAthletes();
+                break;
+            case "ChooseActivity" :
+                activityCreation();
                 break;
         }
     }
@@ -55,16 +59,18 @@ public class Application
         weight = sc.nextDouble();
         System.out.println("Enter your gender (MALE/FEMALE/OTHER):");
         gender = null;
-        try {
-            gender = Gender.valueOf(sc.nextLine().toUpperCase());
-        } catch (IllegalArgumentException e) {
-            System.out.println("Invalid gender entered. Defaulting to OTHER.");
-            gender = Gender.OTHER;
-        }
+        gender = Gender.valueOf(sc.nextLine().toUpperCase());
+    // try {
+            // gender = Gender.valueOf(sc.nextLine().toUpperCase());
+        // } catch (IllegalArgumentException e) {
+            // System.out.println("Invalid gender entered. Defaulting to OTHER.");
+            // gender = Gender.OTHER;
+        // }
         // String inputGender = sc.nextLine().toUpperCase();
         // gender = Gender.valueOf(gender);
         Athlete athleteInfo = new Athlete(name, age, weight); //gender); // add gender here when we know how to figure the Scanner out for ENUMS
         athletes.add(athleteInfo);
+        activityCreation();
     }
     
     public void listAllAthletes(){
@@ -83,6 +89,8 @@ public class Application
         // }
     }
     public void activityCreation(){
+        
+        
         // Activity activityList = new Activity(name, mode);
         // activities.add(activityList);    
          if (athletes.isEmpty()) {
@@ -90,9 +98,18 @@ public class Application
             return;
         }
         
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Creating new activity...");
-        System.out.print("Enter activity name: ");
-        String activityName = scanner.nextLine();
+        System.out.println("Is it a powered activity or not?");
+        switch (scanner.next()) {
+            case "yes":
+                poweredActivity();
+                break;
+            case "no":
+                standardActivity();
+                break;
+        }
+        
         
         System.out.println("Available transportation modes:");
         for (transportationMode mode : transportationMode.values()) {
@@ -100,7 +117,36 @@ public class Application
         }
         // we do this for all types we have " distance, minutes, athlete by number and etc..."
     }
-
+    
+    public void standardActivity(){
+        String name;
+        double distance;
+        int duration; // minutes
+        double caloriesBurned;
+        Athlete athlete;
+        
+        Scanner activityStandard = new Scanner(System.in);
+        
+        System.out.print("Enter activity name: ");
+        name = activityStandard.nextLine();
+        System.out.println("");
+    }
+    
+    public void poweredActivity(){
+        String name;
+        transportationMode mode;
+        double distance;
+        int duration; // minutes
+        double caloriesBurned;
+        Athlete athlete;
+        
+        Scanner activityPowered = new Scanner(System.in);
+        
+        System.out.print("Enter activity name: ");
+        name = activityPowered.nextLine();
+        System.out.println("");
+    }
+    
     public void quit(){
         String name;
         if (scanner.equals("quit")) {

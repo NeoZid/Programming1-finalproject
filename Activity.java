@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Scanner;
 /**
  * Write a description of class Activity here.
  *
@@ -12,6 +12,7 @@ public class Activity
     private transportationMode mode;
     private double distance;
     private int duration; // minutes
+    private double caloriesBurned;
     private Athlete athlete;
     // private ArrayList<String> poweredActivity;
     // private ArrayList<String> regularActivity;
@@ -19,11 +20,12 @@ public class Activity
      /**
      * Constructor for objects of class Activity
      */
-    public Activity(String name, transportationMode mode, double distance, int duration, Athlete athlete) {
+    public Activity(String name, transportationMode mode, double distance, int duration, double caloriesBurned, Athlete athlete) {
         this.name = name;
         this.mode = mode;
         this.distance = distance;
         this.duration = duration;
+        this.caloriesBurned = caloriesBurned;
         this.athlete = athlete;
     }
     
