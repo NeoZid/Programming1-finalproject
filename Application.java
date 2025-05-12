@@ -79,8 +79,12 @@ public class Application
         }
     }
     public void activityCreation(String name, transportationMode mode){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("What is the activity?");
+        name = sc.nextLine();
+        
         Activity activityList = new Activity(name, mode);
-        activities.add(activityList);    
+        activities.add(activityList);
     }
      public void activityList()
     {
