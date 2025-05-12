@@ -58,9 +58,18 @@ public class Application
         System.out.println("Enter your weight: ");
         weight = sc.nextDouble();
         System.out.println("Enter your gender (MALE/FEMALE/OTHER):");
-        gender = null;
-        gender = Gender.valueOf(sc.nextLine().toUpperCase());
-    // try {
+        switch (sc.next()) {
+            case "MALE":
+                gender = Gender.MALE;
+                break;
+            case "FEMALE":
+                gender = Gender.FEMALE;
+                break;
+            case "OTHER":
+                gender = Gender.OTHER;
+                break;
+        }
+        // try {
             // gender = Gender.valueOf(sc.nextLine().toUpperCase());
         // } catch (IllegalArgumentException e) {
             // System.out.println("Invalid gender entered. Defaulting to OTHER.");
@@ -101,6 +110,7 @@ public class Application
         Scanner scanner = new Scanner(System.in);
         System.out.println("Creating new activity...");
         System.out.println("Is it a powered activity or not?");
+        System.out.println("yes/no");
         switch (scanner.next()) {
             case "yes":
                 poweredActivity();
@@ -110,11 +120,6 @@ public class Application
                 break;
         }
         
-        
-        System.out.println("Available transportation modes:");
-        for (transportationMode mode : transportationMode.values()) {
-            System.out.println("- " + mode);
-        }
         // we do this for all types we have " distance, minutes, athlete by number and etc..."
     }
     
@@ -134,17 +139,21 @@ public class Application
     
     public void poweredActivity(){
         String name;
-        transportationMode mode;
+        //transportationMode mode;
         double distance;
         int duration; // minutes
         double caloriesBurned;
         Athlete athlete;
         
-        Scanner activityPowered = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         System.out.print("Enter activity name: ");
-        name = activityPowered.nextLine();
-        System.out.println("");
+        name = sc.nextLine();
+        System.out.println("What is the mode of transport?");
+        System.out.println("Available transportation modes:");
+        for (transportationMode mode : transportationMode.values()) {
+            System.out.println("- " + mode);
+        }
     }
     
     public void quit(){
