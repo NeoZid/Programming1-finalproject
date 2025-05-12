@@ -7,12 +7,14 @@
  */
 public class PoweredActivity extends Activity
 {
-    public PoweredActivity(){
-    super("",transportationMode.BIKING);
+    private String equipment;
+    
+     public PoweredActivity(String name, transportationMode mode, double distance, int duration, Athlete athlete, String equipment) {
+        super(name, mode, distance, duration, athlete);
+        this.equipment = equipment;
     }
     
-    public void chooseEquipment(){
-        // choose between Bikes, Ebikes, Rollerskates etc
+    public String getEquipment() {
+        return equipment; 
     }
-    
 }

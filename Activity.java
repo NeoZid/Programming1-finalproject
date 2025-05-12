@@ -10,18 +10,21 @@ public class Activity
 {
     private String name;
     private transportationMode mode;
-    private ArrayList<String> poweredActivity;
-    private ArrayList<String> regularActivity;
+    private double distance;
+    private int duration; // minutes
+    private Athlete athlete;
+    // private ArrayList<String> poweredActivity;
+    // private ArrayList<String> regularActivity;
 
      /**
      * Constructor for objects of class Activity
      */
-    public Activity(String name, transportationMode mode)
-    {
-        this.name= name;
+    public Activity(String name, transportationMode mode, double distance, int duration, Athlete athlete) {
+        this.name = name;
         this.mode = mode;
-        poweredActivity = new ArrayList<>();
-        // regularActivity = new ArrayList<>();
+        this.distance = distance;
+        this.duration = duration;
+        this.athlete = athlete;
     }
     
     public void activityDetail(){
@@ -32,5 +35,20 @@ public class Activity
         // choose between Regular/Power activities
     }
     
+    public String getName() { 
+        return name; 
+    }
+    public transportationMode getMode() {
+        return mode; 
+    }
+    public double getDistance() { 
+        return distance; 
+    }
+    public int getDuration() { 
+        return duration; 
+    }
+    public Athlete getAthlete() { 
+        return athlete;
+    }
     
 }

@@ -11,7 +11,7 @@ public class Application
     private static ArrayList<Athlete> athletes;
     private ArrayList<Activity> activities;
     private Scanner scanner;
-    private Gender gender;
+    
     /**
      * Constructor for objects of class Application
      */
@@ -19,7 +19,7 @@ public class Application
     {
         Scanner scanner = new Scanner(System.in);
         athletes = new ArrayList<>();
-        
+        activities = new ArrayList<>();
         printWelcome();
     }
     
@@ -47,16 +47,23 @@ public class Application
         Gender gender;
         Scanner sc = new Scanner(System.in);
         
-        System.out.println("What is your name?");
+        System.out.println("Enter your name: ");
         name = sc.nextLine();
-        System.out.println("How old are you?");
+        System.out.println("Enter your age: ");
         age = sc.nextInt();
-        System.out.println("How much do you weigh?");
+        System.out.println("Enter your weight: ");
         weight = sc.nextDouble();
-        // System.out.println("What is your gender?");
+        System.out.println("Enter your gender (MALE/FEMALE/OTHER):");
+        gender = null;
+        try {
+            gender = Gender.valueOf(sc.nextLine().toUpperCase());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid gender entered. Defaulting to OTHER.");
+            gender = Gender.OTHER;
+        }
         // String inputGender = sc.nextLine().toUpperCase();
         // gender = Gender.valueOf(gender);
-        Athlete athleteInfo = new Athlete(name, age, weight); // add gender here when we know how to figure the Scanner out for ENUMS
+        Athlete athleteInfo = new Athlete(name, age, weight); //gender); // add gender here when we know how to figure the Scanner out for ENUMS
         athletes.add(athleteInfo);
     }
     
@@ -65,12 +72,34 @@ public class Application
         for (Athlete athlete : athletes) {
             System.out.println(athlete);
         }
+        
+         // if (athletes.isEmpty()) {
+            // System.out.println("No athletes registered yet.");
+        // } else {
+            // System.out.println("\nRegistered Athletes:");
+            // for (Athlete athlete : athletes) {
+                // System.out.println("- " + athlete);
+            // }
+        // }
     }
-    public void activityCreation(String name, transportationMode mode, PoweredActivity poweredActivity){
-        Activity activityList = new Activity(name, mode);
-        activities.add(activityList);    
+    public void activityCreation(){
+        // Activity activityList = new Activity(name, mode);
+        // activities.add(activityList);    
+         if (athletes.isEmpty()) {
+            System.out.println("Please sign up an athlete first.");
+            return;
+        }
+        
+        System.out.println("Creating new activity...");
+        System.out.print("Enter activity name: ");
+        String activityName = scanner.nextLine();
+        
+        System.out.println("Available transportation modes:");
+        for (transportationMode mode : transportationMode.values()) {
+            System.out.println("- " + mode);
+        }
+        // we do this for all types we have " distance, minutes, athlete by number and etc..."
     }
-    
 
     public void quit(){
         String name;
@@ -78,14 +107,10 @@ public class Application
             scanner.close();
         }
     }
-    public void activityCreation(String name, transportationMode mode){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("What is the activity?");
-        name = sc.nextLine();
-        
-        Activity activityList = new Activity(name, mode);
-        activities.add(activityList);
-    }
+    // void activityCreation(String name, transportationMode mode){
+        //Activity activityList = new Activity(name, mode);
+        //activities.add(activityList);}    
+    
      public void activityList()
     {
         System.out.println("Regular activies include:");
