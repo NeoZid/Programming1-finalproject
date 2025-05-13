@@ -61,6 +61,7 @@ public class Application
             System.out.println("Invalid gender entered. Defaulting to OTHER.");
             gender = Gender.OTHER;
         }
+        
         // String inputGender = sc.nextLine().toUpperCase();
         // gender = Gender.valueOf(gender);
         Athlete athleteInfo = new Athlete(name, age, weight); //gender); // add gender here when we know how to figure the Scanner out for ENUMS
