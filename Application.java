@@ -20,7 +20,7 @@ public class Application
         Scanner scanner = new Scanner(System.in);
         athletes = new ArrayList<>();
         activities = new ArrayList<>();
-        printWelcome();
+        //printWelcome();
     }
     
     public void printWelcome(){
@@ -87,6 +87,9 @@ public class Application
                 System.out.println("- " + athlete.getName());
             }
         }
+        printWelcome();
+    }
+        public void play() {
         printWelcome();
     }
     public void activityCreation(){
@@ -301,10 +304,16 @@ public class Application
         }
         
     }
-    public void quit(){
-        String name;
-        if (scanner.equals("quit")) {
+    // public void quit(){
+        // String name;
+        // if (scanner.equals("quit")) {
+            // scanner.close();
+        // }
+    // }
+        public void quit() {
+        if (scanner != null) {
             scanner.close();
+            System.out.println("Application closed.");
         }
     }
     // void activityCreation(String name, transportationMode mode){
