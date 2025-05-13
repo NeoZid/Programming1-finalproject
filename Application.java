@@ -209,7 +209,7 @@ public class Application
     
     public void poweredActivity(){
         String name;
-        //transportationMode mode;
+        transportationMode mode;
         double distance;
         double calories;
         int duration; // minutes
@@ -217,6 +217,7 @@ public class Application
         Athlete athlete;
         int athleteIndex;
         PoweredActivity activity;
+        String equipment;
         
         Scanner sc = new Scanner(System.in);
         
@@ -228,24 +229,24 @@ public class Application
         for (transportationMode modeList : transportationMode.values()) {
             System.out.println("- " + modeList);
         }
-        transportationMode mode;
         mode = null;
-        switch (sc.next()) {
+        name = null;
+          switch (sc.next()) {
             case "1":
                 mode = transportationMode.BIKING;
-                
+                name = "BIKING";
                 break;
             case "2":
                 mode = transportationMode.ROLLERSKATES;
-                
+                name = "ROLLERSKATES";
                 break;
             case "3" :
                 mode = transportationMode.SWIMMING;
-                
+                name = "SWIMMING";
                 break;
             case "4" :
                 mode = transportationMode.SKIING;
-                
+                name = "SKIING";
                 break;
         }  
         System.out.print("Enter distance (km): ");
@@ -255,7 +256,7 @@ public class Application
         duration = sc.nextInt();
         
         System.out.print("Enter equipment used: ");
-        String equipment = sc.nextLine();
+         equipment = sc.nextLine();
         // add list off equipment
         
         System.out.println("Choose an athlete by index:");
@@ -264,7 +265,6 @@ public class Application
         }
         athleteIndex = sc.nextInt();
         athlete = athletes.get(athleteIndex);
-        name = null;
         calories = calculateCalories( mode, distance);
         activity = new PoweredActivity(name, mode, distance, duration, calories, athlete, equipment);
         activities.add(activity);
