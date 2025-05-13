@@ -124,17 +124,85 @@ public class Application
     }
     
     public void standardActivity(){
-        String name;
+    
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Select an activity and type it's corresponding number:");
+        System.out.println("1. Running, 2. Walking, 3. Planks, 4. Push-Ups");
+        switch (scanner.next()) {
+            case "1":
+                chooseRunning();
+                break;
+            case "2":
+                chooseWalking();
+                break;
+            case "3":
+                choosePlanks();
+                break;
+            case "4":
+                choosePushUps();
+                break;
+        }
+    }
+    
+    public static void chooseRunning(){
         double distance;
-        int duration; // minutes
+        double speed;
+        int duration;
         double caloriesBurned;
-        Athlete athlete;
-        
-        Scanner activityStandard = new Scanner(System.in);
-        
-        System.out.print("Enter activity name: ");
-        name = activityStandard.nextLine();
-        System.out.println("");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How far did you run? ");
+        distance = sc.nextDouble();
+        System.out.println("How long did you run for? (enter in minutes) ");
+        duration = sc.nextInt();
+        System.out.print("Great progress! You have ran a total of " + distance + " km" + "\n");
+        caloriesBurned = distance * duration;
+        System.out.print("You have burned this amount of calories: " + caloriesBurned);
+    }
+    
+    public static void chooseWalking(){
+        double distance;
+        double speed;
+        int duration;
+        double caloriesBurned;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How far did you walk? ");
+        distance = sc.nextDouble();
+        System.out.println("How long did you walk for? (enter in minutes) ");
+        duration = sc.nextInt();
+        System.out.print("Great progress! You have ran a total of " + distance + " km" + "\n");
+        caloriesBurned = distance * duration;
+        System.out.print("You have burned this amount of calories: " + caloriesBurned);
+    }
+    
+    public static void choosePlanks(){
+        int amount;
+        int duration;
+        double caloriesBurned;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How long did you do it for? (enter in minutes) ");
+        duration = sc.nextInt();
+        System.out.println("How many did you do?");
+        amount = sc.nextInt();
+        caloriesBurned = amount * duration;
+        System.out.print("You have burned this amount of calories: " + caloriesBurned);
+    }
+    
+    public static void choosePushUps(){
+        int amount;
+        int duration;
+        double caloriesBurned;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How long did you do it for? (enter in minutes) ");
+        duration = sc.nextInt();
+        System.out.println("How many did you do?");
+        amount = sc.nextInt();
+        caloriesBurned = amount * duration;
+        System.out.print("You have burned this amount of calories: " + caloriesBurned);
     }
     
     public void poweredActivity(){
