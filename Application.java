@@ -43,6 +43,7 @@ public class Application
     public void athleteSignup(){
         String name; 
         int age;
+        
         double weight;
         Gender gender;
         Scanner sc = new Scanner(System.in);
