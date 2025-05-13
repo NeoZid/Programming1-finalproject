@@ -10,7 +10,7 @@ public class ApplicationMain
     public static void main(String[] args)
     { // test
         Application application = new Application();
-        application.play();
+        application.printWelcome();
     }
     
     
