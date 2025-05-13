@@ -43,8 +43,9 @@ public class Application
                 activityCreation();
                 break;
             case "4":
-                // method name later for listactivity
-                break;
+                 activityList();
+                    break;// method name later for listactivity
+                
         }
     }
     
@@ -73,9 +74,13 @@ public class Application
             case "OTHER":
                 gender = Gender.OTHER;
                 break;
+            default:
+                System.out.println("Unknown gender selected. Defaulting to OTHER.");
+                gender = Gender.OTHER;
         }
         Athlete athleteInfo = new Athlete(name, age, weight, gender); 
         athletes.add(athleteInfo);
+        System.out.println("Sign-up successful!");
         activityCreation();
     }
     
@@ -90,9 +95,20 @@ public class Application
         }
         printWelcome();
     }
+    
         public void play() {
-        printWelcome();
+        boolean running = true;
+        while (running) {
+            printWelcome();
+            System.out.println("\nEnter 'Quit' to quit or any key to return to the menu:");
+            String input = scanner.next();
+            if (input.equalsIgnoreCase("Quit")) {
+                running = false;
+            }
+        }
+        quit();
     }
+    
     public void activityCreation(){
         // Activity activityList = new Activity(name, mode);
         // activities.add(activityList);
@@ -113,6 +129,9 @@ public class Application
                 break;
             case "2":
                 poweredActivity();
+                break;
+            default:
+                System.out.println("Invalid activity type.");
                 break;
             // case "3" : 
                 // PoweredActivity.chooseEquipmentActivity();
@@ -140,7 +159,18 @@ public class Application
             case "4":
                 choosePushUps();
                 break;
+            default:
+                System.out.println("Invalid activity.");
         }
+    }
+    
+    public Athlete selectAthlete() {
+        System.out.println("Choose an athlete by index:");
+        for (int i = 0; i < athletes.size(); i++) {
+            System.out.println(i + ": " + athletes.get(i).getName());
+        }
+        int index = scanner.nextInt();
+        return athletes.get(index);
     }
     
     public static void chooseRunning(){
@@ -246,7 +276,10 @@ public class Application
         Scanner sc = new Scanner(System.in);
         
         System.out.print("Enter activity name: ");
-        System.out.println("Type 1,2,3,4");
+         System.out.println("1. BIKING");
+        System.out.println("2. ROLLERSKATES");
+        System.out.println("3. SWIMMING");
+        System.out.println("4. SKIING");
 
         //System.out.println("What is the mode of transport?");
         System.out.println("Available transportation modes:");
@@ -258,7 +291,7 @@ public class Application
           switch (sc.next()) {
             case "1":
                 mode = transportationMode.BIKING;
-                name = "BIKING";
+                name= "BIKING";
                 break;
             case "2":
                 mode = transportationMode.ROLLERSKATES;
@@ -279,16 +312,34 @@ public class Application
         System.out.print("Enter duration (minutes): ");
         duration = sc.nextInt();
         
+        equipment = sc.nextLine();
         System.out.print("Enter equipment used: ");
+        System.out.println("1. BIKE, 2. SKATES, 3. GOGGLES, 4.SKIS");
          equipment = sc.nextLine();
         // add list off equipment
+        switch (sc.next()) {
+            case "1":
+                equipment  = "BIKE";
+                break;
+                
+            case "2":
+                 equipment = "SKATES";
+                break;
+                
+            case "3" :
+                 equipment = "GOGGLES";
+                break;
+                
+            case "4" :
+                 equipment = "SKIS";
+                break;
+                
+             default:
+                    equipment = "UNKNOWN";
+                    break;
+        }  
         
-        System.out.println("Choose an athlete by index:");
-        for (int i = 0; i < athletes.size(); i++) {
-            System.out.println(i + ": " + athletes.get(i).getName());
-        }
-        athleteIndex = sc.nextInt();
-        athlete = athletes.get(athleteIndex);
+        athlete = selectAthlete();
         calories = calculateCalories( mode, distance);
         activity = new PoweredActivity(name, mode, distance, duration, calories, athlete, equipment);
         activities.add(activity);
@@ -300,8 +351,10 @@ public class Application
                 return distance * 30;
             case ROLLERSKATES: 
                 return distance * 50;
-                 default: 
-                     return distance * 40;
+            case SWIMMING:
+            case SKIING:
+            default:
+                return distance * 40;
         }
         
     }
@@ -311,12 +364,11 @@ public class Application
             // scanner.close();
         // }
     // }
-        public void quit() {
-        if (scanner != null) {
-            scanner.close();
-            System.out.println("Application closed.");
-        }
+       public void quit() {
+        System.out.println("Goodbye! Application closed.");
+        scanner.close();
     }
+
     // void activityCreation(String name, transportationMode mode){
         //Activity activityList = new Activity(name, mode);
         //activities.add(activityList);}    
@@ -328,4 +380,6 @@ public class Application
             System.out.println(activities.get(i));
         }
     }
+    
+    
 }
