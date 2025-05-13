@@ -28,21 +28,21 @@ public class Application
         System.out.println("Welcome to StrongAF, an application that records your workout!");
         System.out.println("What would you like to do today?");
         System.out.println("Select from the following");
-        System.out.println("SignUp");
-        System.out.println("ListAthletes");
-        System.out.println("ChooseActivity");
-        System.out.println("ListActivityHistory");
+        System.out.println("1 - SignUp");
+        System.out.println("2 - ListAthletes");
+        System.out.println("3 - ChooseActivity");
+        System.out.println("4 - ListActivityHistory");
         switch (scanner.next()) {
-            case "SignUp":
+            case "1":
                 athleteSignup();
                 break;
-            case "ListAthletes":
+            case "2":
                 listAllAthletes();
                 break;
-            case "ChooseActivity" :
+            case "3" :
                 activityCreation();
                 break;
-            case "ListActivityHistory":
+            case "4":
                 // method name later for listactivity
                 break;
         }
@@ -225,15 +225,15 @@ public class Application
 
         //System.out.println("What is the mode of transport?");
         System.out.println("Available transportation modes:");
-        for (transportationMode mode : transportationMode.values()) {
-            System.out.println("- " + mode);
+        for (transportationMode modeList : transportationMode.values()) {
+            System.out.println("- " + modeList);
         }
         transportationMode mode;
         mode = null;
         switch (sc.next()) {
             case "1":
                 mode = transportationMode.BIKING;
-        
+                
                 break;
             case "2":
                 mode = transportationMode.ROLLERSKATES;
@@ -245,7 +245,7 @@ public class Application
                 break;
             case "4" :
                 mode = transportationMode.SKIING;
-            
+                
                 break;
         }  
         System.out.print("Enter distance (km): ");
