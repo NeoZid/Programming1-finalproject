@@ -378,6 +378,7 @@ public class Application
         } else {
             System.out.println("\n Activity progress:");
             for (Activity activityList : activities) {
+                //System.out.println(activityList);
                 System.out.println("Activity: " + activityList.getName() + " Mode: " + activityList.getMode() + " Distance travelled: " + activityList.getDistance());
             }
         }
