@@ -129,7 +129,7 @@ public class Application
         
         System.out.println("Select an activity and type it's corresponding number:");
         System.out.println("1. Running, 2. Walking, 3. Planks, 4. Push-Ups");
-        switch (sc.next()) { //changed scanner to sc
+        switch (sc.next()) { 
             case "1":
                 chooseRunning();
                 break;
