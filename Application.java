@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Application
 {
     private static ArrayList<Athlete> athletes;
-    private ArrayList<Activity> activities;
+    private static ArrayList<Activity> activities;
     private Scanner scanner;
     
     /**
@@ -31,6 +31,7 @@ public class Application
         System.out.println("SignUp");
         System.out.println("ListAthletes");
         System.out.println("ChooseActivity");
+        System.out.println("ListActivityHistory");
         switch (scanner.next()) {
             case "SignUp":
                 athleteSignup();
@@ -40,6 +41,9 @@ public class Application
                 break;
             case "ChooseActivity" :
                 activityCreation();
+                break;
+            case "ListActivityHistory":
+                // method name later for listactivity
                 break;
         }
     }
@@ -58,6 +62,7 @@ public class Application
         System.out.println("Enter your weight: ");
         weight = sc.nextDouble();
         System.out.println("Enter your gender (MALE/FEMALE/OTHER):");
+        gender = null;
         switch (sc.next()) {
             case "MALE":
                 gender = Gender.MALE;
@@ -69,26 +74,21 @@ public class Application
                 gender = Gender.OTHER;
                 break;
         }
-        gender = null;
-        Athlete athleteInfo = new Athlete(name, age, weight, gender); // add gender here when we know how to figure the Scanner out for ENUMS
+        Athlete athleteInfo = new Athlete(name, age, weight, gender); 
         athletes.add(athleteInfo);
         activityCreation();
     }
     
     public void listAllAthletes(){
-        System.out.println("Here's all of the athletes that signed up:");
-        for (Athlete athlete : athletes) {
-            System.out.println(athlete);
+        if (athletes.isEmpty()) {
+            System.out.println("No athletes registered yet.");
+        } else {
+            System.out.println("\nRegistered Athletes:");
+            for (Athlete athlete : athletes) {
+                System.out.println("- " + athlete.getName());
+            }
         }
-        
-         // if (athletes.isEmpty()) {
-            // System.out.println("No athletes registered yet.");
-        // } else {
-            // System.out.println("\nRegistered Athletes:");
-            // for (Athlete athlete : athletes) {
-                // System.out.println("- " + athlete);
-            // }
-        // }
+        printWelcome();
     }
     public void activityCreation(){
         // Activity activityList = new Activity(name, mode);
@@ -121,9 +121,7 @@ public class Application
     }
     
     public void standardActivity(){
-    
         Scanner sc = new Scanner(System.in);
-        
         System.out.println("Select an activity and type it's corresponding number:");
         System.out.println("1. Running, 2. Walking, 3. Planks, 4. Push-Ups");
         switch (sc.next()) { 
@@ -147,7 +145,9 @@ public class Application
         double speed;
         int duration;
         double caloriesBurned;
-
+        String name;
+        transportationMode mode;
+        
         Scanner sc = new Scanner(System.in);
         System.out.println("How far did you run? ");
         distance = sc.nextDouble();
@@ -156,6 +156,10 @@ public class Application
         System.out.print("Great progress! You have ran a total of " + distance + " km" + "\n");
         caloriesBurned = distance * duration;
         System.out.print("You have burned this amount of calories: " + caloriesBurned);
+        name = "Running";
+        mode = null;
+        Activity running = new Activity (name, mode, distance, duration, caloriesBurned /*athlete*/);
+        activities.add(running);
     }
     
     public static void chooseWalking(){
@@ -172,6 +176,7 @@ public class Application
         System.out.print("Great progress! You have ran a total of " + distance + " km" + "\n");
         caloriesBurned = distance * duration;
         System.out.print("You have burned this amount of calories: " + caloriesBurned);
+        
     }
     
     public static void choosePlanks(){

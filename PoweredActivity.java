@@ -10,7 +10,7 @@ public class PoweredActivity extends Activity
     private String equipment;
     
      public PoweredActivity(String name, transportationMode mode, double distance, int duration, double caloriesBurned, Athlete athlete, String equipment) {
-        super(name, mode, distance, duration, caloriesBurned, athlete);
+        super(name, mode, distance, duration, caloriesBurned /*athlete*/);
         this.equipment = equipment;
     }
     

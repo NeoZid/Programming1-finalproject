@@ -20,7 +20,7 @@ public class Activity
      /**
      * Constructor for objects of class Activity
      */
-    public Activity(String name, transportationMode mode, double distance, int duration, double caloriesBurned, Athlete athlete) {
+    public Activity(String name, transportationMode mode, double distance, int duration, double caloriesBurned/* Athlete athlete*/ ) {
         this.name = name;
         this.mode = mode;
         this.distance = distance;
