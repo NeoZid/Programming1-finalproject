@@ -52,5 +52,7 @@ public class Activity
     public Athlete getAthlete() { 
         return athlete;
     }
-    
+     public double getCaloriesBurned() {
+        return caloriesBurned;
+    }
 }

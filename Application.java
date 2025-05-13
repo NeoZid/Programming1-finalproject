@@ -47,7 +47,6 @@ public class Application
     public void athleteSignup(){
         String name; 
         int age;
-        
         double weight;
         Gender gender;
         Scanner sc = new Scanner(System.in);
@@ -78,7 +77,7 @@ public class Application
         // }
         // String inputGender = sc.nextLine().toUpperCase();
         // gender = Gender.valueOf(gender);
-        Athlete athleteInfo = new Athlete(name, age, weight); //gender); // add gender here when we know how to figure the Scanner out for ENUMS
+        Athlete athleteInfo = new Athlete(name, age, weight); // add gender here when we know how to figure the Scanner out for ENUMS
         athletes.add(athleteInfo);
         activityCreation();
     }
@@ -150,10 +149,20 @@ public class Application
         
         System.out.print("Enter activity name: ");
         name = sc.nextLine();
-        System.out.println("What is the mode of transport?");
+        //System.out.println("What is the mode of transport?");
         System.out.println("Available transportation modes:");
         for (transportationMode mode : transportationMode.values()) {
             System.out.println("- " + mode);
+        }
+        System.out.print("Enter distance (km): ");
+        distance = sc.nextDouble();
+        System.out.print("Enter duration (minutes): ");
+        duration = sc.nextInt();
+         System.out.print("Enter equipment used: ");
+        String equipment = sc.nextLine();
+        System.out.println("Choose an athlete by index:");
+        for (int i = 0; i < athletes.size(); i++) {
+            System.out.println(i + ": " + athletes.get(i).getName());
         }
     }
     
