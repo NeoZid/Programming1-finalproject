@@ -25,13 +25,15 @@ public class Application
     
     public void printWelcome(){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("");
+        System.out.println("");
         System.out.println("Welcome to StrongAF, an application that records your workout!");
         System.out.println("What would you like to do today?");
         System.out.println("Select from the following");
         System.out.println("1 - SignUp");
         System.out.println("2 - ListAthletes");
-        System.out.println("3 - ChooseActivity");
-        System.out.println("4 - ListActivityHistory");
+        System.out.println("3 - ListActivityHistory");
+        System.out.println("Type 'quit' to exit");
         switch (scanner.next()) {
             case "1":
                 athleteSignup();
@@ -46,6 +48,8 @@ public class Application
                  activityList();
                     break;// method name later for listactivity
                 
+                //listAllActivities();
+                //break;
         }
     }
     
@@ -381,5 +385,17 @@ public class Application
         }
     }
     
-    
+
+    public void listAllActivitiesDone(){
+        if (activities.isEmpty()) {
+            System.out.println("No activities registered yet.");
+        } else {
+            System.out.println("\n Activity progress:");
+            for (Activity activityList : activities) {
+                System.out.println("Activity: " + activityList.getName() + " Mode: " + activityList.getMode() + " Distance travelled: " + activityList.getDistance());
+            }
+        }
+        printWelcome();
+    }
+
 }
