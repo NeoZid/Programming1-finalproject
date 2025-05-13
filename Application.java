@@ -167,6 +167,8 @@ public class Application
         double speed;
         int duration;
         double caloriesBurned;
+        String name;
+        transportationMode mode;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("How far did you walk? ");
@@ -176,13 +178,19 @@ public class Application
         System.out.print("Great progress! You have ran a total of " + distance + " km" + "\n");
         caloriesBurned = distance * duration;
         System.out.print("You have burned this amount of calories: " + caloriesBurned);
-        
+        name = "Walking";
+        mode = null;
+        Activity walking = new Activity (name, mode, distance, duration, caloriesBurned /*athlete*/);
+        activities.add(walking);
     }
     
     public static void choosePlanks(){
         int amount;
         int duration;
         double caloriesBurned;
+        String name;
+        transportationMode mode;
+        double distance;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("How long did you do it for? (enter in minutes) ");
@@ -191,12 +199,20 @@ public class Application
         amount = sc.nextInt();
         caloriesBurned = amount * duration;
         System.out.print("You have burned this amount of calories: " + caloriesBurned);
+        name = "Planks";
+        mode = null;
+        distance = 0;
+        Activity planks = new Activity (name, mode, distance, duration, caloriesBurned /*athlete*/);
+        activities.add(planks);
     }
     
     public static void choosePushUps(){
         int amount;
         int duration;
         double caloriesBurned;
+        String name;
+        transportationMode mode;
+        double distance;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("How long did you do it for? (enter in minutes) ");
@@ -205,6 +221,11 @@ public class Application
         amount = sc.nextInt();
         caloriesBurned = amount * duration;
         System.out.print("You have burned this amount of calories: " + caloriesBurned);
+        name = "PushUps";
+        mode = null;
+        distance = 0;
+        Activity pushUps = new Activity (name, mode, distance, duration, caloriesBurned /*athlete*/);
+        activities.add(pushUps);
     }
     
     public void poweredActivity(){
