@@ -216,13 +216,33 @@ public class Application
         Scanner sc = new Scanner(System.in);
         
         System.out.print("Enter activity name: ");
-        name = sc.nextLine();
+        System.out.println("Type 1,2,3,4");
+
         //System.out.println("What is the mode of transport?");
         System.out.println("Available transportation modes:");
         for (transportationMode mode : transportationMode.values()) {
             System.out.println("- " + mode);
         }
+        transportationMode mode;
+        mode = null;
+        switch (sc.next()) {
+            case "1":
+                mode = transportationMode.BIKING;
         
+                break;
+            case "2":
+                mode = transportationMode.ROLLERSKATES;
+                
+                break;
+            case "3" :
+                mode = transportationMode.SWIMMING;
+                
+                break;
+            case "4" :
+                mode = transportationMode.SKIING;
+            
+                break;
+        }  
         System.out.print("Enter distance (km): ");
         distance = sc.nextDouble();
         
@@ -231,6 +251,7 @@ public class Application
         
         System.out.print("Enter equipment used: ");
         String equipment = sc.nextLine();
+        // add list off equipment
         
         System.out.println("Choose an athlete by index:");
         for (int i = 0; i < athletes.size(); i++) {
@@ -238,27 +259,11 @@ public class Application
         }
         athleteIndex = sc.nextInt();
         athlete = athletes.get(athleteIndex);
-        transportationMode mode;
-        mode = null;
-            switch (sc.next()) {
-            case "1":
-                mode = transportationMode.BIKING;
-                break;
-            case "2":
-                mode = transportationMode.ROLLERSKATES;
-                break;
-            case "3" :
-                mode = transportationMode.SWIMMING;
-                break;
-            case "4" :
-                mode = transportationMode.SKIING;
-                break;
-        }
-        
+        name = null;
         calories = calculateCalories( mode, distance);
         activity = new PoweredActivity(name, mode, distance, duration, calories, athlete, equipment);
         activities.add(activity);
-        System.out.println("Added activity: " + activity);
+        System.out.println("Added activity: " + activity.getName());
     }
         private double calculateCalories(transportationMode mode, double distance) {
         switch (mode) {
