@@ -7,5 +7,5 @@
  */
 public enum transportationMode
 {
-    BIKING, ROLLERSKATES, SWIMMING, SKIING
+    BIKING, ROLLERSKATES, SKIING
 }
