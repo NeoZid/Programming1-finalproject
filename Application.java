@@ -91,7 +91,6 @@ public class Application
     }
     
     
-    
     public void listAllAthletes(){
         if (athletes.isEmpty()) {
             System.out.println("No athletes registered yet.");
@@ -105,9 +104,7 @@ public class Application
     }
     
     public void activityCreation(){
-        // Activity activityList = new Activity(name, mode);
-        // activities.add(activityList);
-         if (athletes.isEmpty()) {
+        if (athletes.isEmpty()) {
             System.out.println("Please sign up an athlete first.");
             printWelcome();
         }
@@ -117,7 +114,6 @@ public class Application
         System.out.println("Does your activity require an equipment?");
         System.out.println("Type 1 for Yes");
         System.out.println("Type 2 for No");
-        // System.out.println("Type 3 for WithEquipment");
         switch (scanner.next()) {
             case "1":
                 poweredActivity();
@@ -128,9 +124,7 @@ public class Application
             default:
                 System.out.println("Invalid activity type.");
                 break;
-            // case "3" : 
-                // PoweredActivity.chooseEquipmentActivity();
-                // break;
+           
         }
 
         printWelcome();
@@ -177,6 +171,7 @@ public class Application
         String name;
         transportationMode mode;
         String equipment;
+        Athlete athlete;
         
         
         Scanner sc = new Scanner(System.in);
@@ -202,7 +197,7 @@ public class Application
         String name;
         transportationMode mode;
         String equipment;
-        
+        Athlete athlete;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("How far did you walk? ");
@@ -227,6 +222,7 @@ public class Application
         transportationMode mode;
         double distance;
         String equipment;
+        Athlete athlete;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("How long did you do it for? (enter in minutes) ");
@@ -239,7 +235,7 @@ public class Application
         mode = null;
         distance = 0;
         equipment = null;
-        Activity planks = new Activity (name, mode, equipment,distance, duration, caloriesBurned /*athlete*/);
+        Activity planks = new Activity (name, mode, equipment,distance, duration, caloriesBurned/* athlete*/);
         activities.add(planks);
     }
     
@@ -251,6 +247,7 @@ public class Application
         transportationMode mode;
         double distance;
         String equipment;
+        Athlete athlete;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("How long did you do it for? (enter in minutes) ");
@@ -263,7 +260,7 @@ public class Application
         mode = null;
         distance = 0;
         equipment = null;
-        Activity pushUps = new Activity (name, mode, equipment, distance, duration, caloriesBurned /*athlete*/);
+        Activity pushUps = new Activity (name, mode, equipment, distance, duration, caloriesBurned/*athlete*/);
         activities.add(pushUps);
     }
     
@@ -308,9 +305,9 @@ public class Application
                 break;
             default :
                 mode = null;
-                name = sc.nextLine();
-            System.out.println("What would you like to call your activity?");
                 equipment = sc.nextLine();
+                System.out.println("What would you like to call your activity?");
+                name = sc.nextLine();
                 equipmentList.add(name);
                 break;
         }  
@@ -322,7 +319,7 @@ public class Application
         
         athlete = selectAthlete();
         calories = calculateCalories( mode, distance);
-        activity = new PoweredActivity(name, mode, equipment, distance, duration, calories, athlete);
+        activity = new PoweredActivity(name, mode, equipment, distance, duration, calories/*athlete*/);
         activities.add(activity);
         System.out.println("Added activity: " + activity.getName());
         
@@ -373,7 +370,6 @@ public class Application
         } else {
             System.out.println("\n Activity progress:");
             for (Activity activity : activities) {
-                //System.out.println(activityList);
                 System.out.println(activity.toString());
             }
         }

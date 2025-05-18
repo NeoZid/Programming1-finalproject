@@ -30,6 +30,7 @@ public class Activity
         
     }
     
+    
     public String toString(){
         return "Name:" + name + "\nMode:" + mode +"\nEquipmentUsed:" + equipment + "\nCaloriesBurned:" + caloriesBurned + "\nAthlete:" + athlete;
     }

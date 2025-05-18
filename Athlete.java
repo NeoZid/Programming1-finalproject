@@ -26,7 +26,7 @@ public class Athlete
     }
     
     public String toString(){
-        return name + age + weight + gender;
+        return "\nName:" + name + "\nAge:" + age + "\nWeight:" + weight + "\nGender:" + gender;
     }
     
     public String getName() {
