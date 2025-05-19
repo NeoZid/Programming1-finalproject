@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class PoweredActivity extends Activity
 {
     private String equipment;
+
     /**
      * Constructs a PoweredActivity object with the specified attributes.
      * Inherits from the Activity class and initializes all relevant fields.
@@ -25,6 +26,6 @@ public class PoweredActivity extends Activity
      */
     public PoweredActivity(String name, transportationMode mode, String equipment, double distance, int duration, double caloriesBurned ,Athlete athlete) {
         super(name, mode, equipment, distance, duration, caloriesBurned/* athlete*/);
-        
+  
     }
 }

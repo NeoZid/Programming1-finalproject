@@ -39,4 +39,23 @@ public class ActivityTest
     public void tearDown()
     {
     }
+<<<<<<< HEAD
+=======
+    
+    /**
+     * Test that an activity is correctly created (name, age, weight and gender).
+     */
+    @Test
+    public void testActivityCreation()
+    {
+        Activity activity = new Activity("Rollerskating", transportationMode.ROLLERSKATES, "Rollerskates", 200, 20, 75, null);
+        assertEquals("Rollerskating", activity.getName());
+        assertEquals(transportationMode.ROLLERSKATES, activity.getMode());
+        assertEquals("Rollerskates", activity.getEquipment());
+        assertEquals(200, activity.getDistance());
+        assertEquals(20, activity.getDuration());
+        assertEquals(75, activity.getCaloriesBurned());
+        assertEquals(null, activity.getAthlete());
+    }
+>>>>>>> 23d7a59eb8251e0d0453c58d622d4e40d7c32a0a
 }

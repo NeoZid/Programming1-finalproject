@@ -41,7 +41,7 @@ public class AthleteTest
     }
     
     /**
-     * Test that a an athlete is correctly created (name, age, weight and gender).
+     * Test that an athlete is correctly created (name, age, weight and gender).
      */
     @Test
     public void testAthleteCreation()
