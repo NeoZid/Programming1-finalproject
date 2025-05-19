@@ -10,7 +10,7 @@ public class PoweredActivity extends Activity
 {
     private String equipment;
     
-     public PoweredActivity(String name, transportationMode mode, String equipment, double distance, int duration, double caloriesBurned /*Athlete athlete*/) {
+     public PoweredActivity(String name, transportationMode mode, String equipment, double distance, int duration, double caloriesBurned ,Athlete athlete) {
         super(name, mode, equipment, distance, duration, caloriesBurned/* athlete*/);
         
     }

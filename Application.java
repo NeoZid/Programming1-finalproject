@@ -24,7 +24,6 @@ public class Application
         athletes = new ArrayList<>();
         activities = new ArrayList<>();
         equipmentList = new ArrayList<>();
-        //printWelcome();
     }
     
     public void printWelcome(){
@@ -213,7 +212,7 @@ public class Application
         return athletes.get(index);
     }
     
-    public static void chooseRunning(){
+    public void chooseRunning(){
         double distance;
         double speed;
         int duration;
@@ -239,7 +238,7 @@ public class Application
         activities.add(running);
     }
     
-    public static void chooseWalking(){
+    public void chooseWalking(){
         double distance;
         double speed;
         int duration;
@@ -331,13 +330,15 @@ public class Application
         equipmentList.add("Skiis");
         Scanner sc = new Scanner(System.in);
         
-        System.out.print("What would you like to use? Here are our suggestions: ");
+        System.out.print("What equipment would you like to use? We have presets or you can create your own!");
+        System.out.print("\nType the ones in the list OR ");
+        System.out.print("\nType create your own");
         for (String equipments : equipmentList) {
             System.out.println( "\n" + equipments);
         }
         mode = null;
         name = null;
-          switch (sc.next()) {
+        switch (sc.next()) {
             case "Bike":
                 equipment = "Bike";
                 mode = transportationMode.BIKING;
@@ -354,11 +355,13 @@ public class Application
                 name = "SKIING";
                 break;
             default :
-                mode = null;
+                sc.nextLine();
+                System.out.println("What equipment would you like to use?");
                 equipment = sc.nextLine();
                 System.out.println("What would you like to call your activity?");
                 name = sc.nextLine();
                 equipmentList.add(name);
+                mode = null;
                 break;
         }  
         System.out.print("Enter distance (km): ");
@@ -369,12 +372,12 @@ public class Application
         
         athlete = selectAthlete();
         calories = calculateCalories( mode, distance);
-        activity = new PoweredActivity(name, mode, equipment, distance, duration, calories/*athlete*/);
-        activities.add(activity);
-        System.out.println("Added activity: " + activity.getName());
-        
+        PoweredActivity activityP = new PoweredActivity(name, mode, equipment, distance, duration, calories, athlete);
+        activities.add(activityP);
+        System.out.println("Added activity: " + activityP.getName());
     }
-        private double calculateCalories(transportationMode mode, double distance) {
+    
+    private double calculateCalories(transportationMode mode, double distance) {
         switch (mode) {
             case BIKING: 
                 System.out.println("Calories Burnt:");
@@ -420,7 +423,7 @@ public class Application
         } else {
             System.out.println("\n Activity progress:");
             for (Activity activity : activities) {
-                System.out.println(activity.toString());
+                System.out.println("\n" + activity.toString());
             }
         }
         printWelcome();
