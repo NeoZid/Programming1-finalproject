@@ -15,3 +15,12 @@ Now, we are completing the full project by implementing the logic, testing it
 using a driver class, and preparing documentation like the README and Javadoc.
 AUTHORS: Kimia, Neo, Floyd
 USER INSTRUCTIONS: 
+
+As you open the app, you have a few options to choose from. Input the number associated with
+what you want to do. The first thing you should do is to sign up where you input your name, age, weight and gender.
+Keep in mind, you are able to create multiple profiles! After that, you need to create an activity that fits your needs. 
+If you need an equipment, you are directed into the Powered Activity which include Biking, Rollerskates and Skiing. 
+If our presets dont fancy you, you can also create your own equipment! Otherwise, you are directed into the Regular 
+activities such as Walking, Running, Pushups, and Planks. These activities showcase how much you have travelled, for how long
+and how much calories you burned. In the end, you are able to list the history of activities done to keep track of your progress 
+and view how much distance travelled while using the app. That pretty much covers our entire app. Thank you for using StrongAF!
