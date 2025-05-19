@@ -52,4 +52,34 @@ public class AthleteTest
         assertEquals(100, athlete.getWeight());
         assertEquals(Gender.MALE, athlete.getGender());
     }
+
+    @Test
+    public void TestAll()
+    {
+        //ApplicationMain.main({ });
+    }
+    
+
+    @Test
+    public void TryApp()
+    {
+        ApplicationMain applicat1 = new ApplicationMain();
+    }
+
+    @Test
+    public void TRYING()
+    {
+        Athlete athlete1 = new Athlete("Kimia", 20, 20, Gender.FEMALE);
+        assertEquals(20, athlete1.getAge());
+        assertEquals(26, athlete1.getAge());
+        //assertEquals(FEMALE, athlete1.getGender());
+        //assertEquals(KIM, athlete1.getName());
+        assertEquals(20, athlete1.getWeight(), 0.1);
+        assertEquals(30, athlete1.getWeight(), 0.1);
+        athlete1.setGender(Gender.MALE);
+        //assertEquals(FEMALE, athlete1.getGender());
+    }
 }
+
+
+

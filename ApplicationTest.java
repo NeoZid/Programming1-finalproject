@@ -40,5 +40,26 @@ public class ApplicationTest
     {
     }
     
+    @Test
+    public void AthleteSignUp()
+    {
+        Application applicat1 = new Application();
+    }
+    @Test
+    public void AthleteLogin()
+    {
+        Application applicat1 = new Application();
+        applicat1.athleteSignup();
+    }
     
+    @Test
+    public void TryingHard()
+    {
+        Application applicat1 = new Application();
+        applicat1.listAllAthletes();
+    }
 }
+
+
+
+
