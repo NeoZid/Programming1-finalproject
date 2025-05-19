@@ -6,17 +6,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class ApplicationTest.
+ * The test class AthleteTest.
  *
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class ApplicationTest
+public class AthleteTest
 {
     /**
-     * Default constructor for test class ApplicationTest
+     * Default constructor for test class AthleteTest
      */
-    public ApplicationTest()
+    public AthleteTest()
     {
     }
 
@@ -40,5 +40,16 @@ public class ApplicationTest
     {
     }
     
-    
+    /**
+     * Test that a an athlete is correctly created (name, age, weight and gender).
+     */
+    @Test
+    public void testAthleteCreation()
+    {
+        Athlete athlete = new Athlete("test name", 20, 100, Gender.MALE);
+        assertEquals("test name", athlete.getName());
+        assertEquals(20, athlete.getAge());
+        assertEquals(100, athlete.getWeight());
+        assertEquals(Gender.MALE, athlete.getGender());
+    }
 }
