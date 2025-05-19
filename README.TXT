@@ -13,5 +13,5 @@ digram to design the stucture of our program.
 Then, we translated the digram into Java by creating the main classes, enums, feilds, and methods.
 Now, we are completing the full project by implemting the logic, tesing it
 using a driver class, and preparing documentation like the README and Javadoc.
-AUTHORS: Kimia, Neo
+AUTHORS: Kimia, Neo, Floyd
 USER INSTRUCTIONS: (to be added when methods are created)

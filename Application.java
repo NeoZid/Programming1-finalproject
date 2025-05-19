@@ -3,10 +3,11 @@ import java.util.Scanner;
 import java.util.List;
 
 /**
- * Write a description of class Application here.
+ * This class serves as the main controller for mangaging athletes,
+ * recording thier workout activities, and navigating the application.
  *
- * Neo / Kimia / Floyd
- * @version (a version number or a date)
+ * Athors : Neo / Kimia / Floyd
+ * version: (2025/05/18)
  */
 public class Application
 {

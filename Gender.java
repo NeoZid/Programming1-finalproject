@@ -1,9 +1,9 @@
-
 /**
- * Enumeration class Gender - write a description of the enum class here
- *
- * @author Neo / Kimia
- * @version 04-28-2025
+ * Enum representing the gender of an athlete.
+ * Used during athlete signup to categorize users.
+ * 
+ * Athors : Neo / Kimia / Floyd
+ * version: (2025/05/18)
  */
 public enum Gender
 {

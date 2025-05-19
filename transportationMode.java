@@ -1,9 +1,9 @@
-// something
 /**
- * Enumeration class transportationMode - write a description of the enum class here
+ *Enum representing diffrent transportation modes used during powered aciviries.
+ *Each mode can be associated with specific equipment and used to calculate calories burned.
  *
- * @author Neo / Kimia
- * @version (version number or date here)
+ * Athors : Neo / Kimia / Floyd
+ * version: (2025/05/18)
  */
 public enum transportationMode
 {

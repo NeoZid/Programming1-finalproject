@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- * Write a description of class Athlete here.
- *
- * @author Neo / Kimia
- * @version 04-29-2025
+ * Stores personal details like name, age, genderr, and weight,
+ * and assigns a unique ID to each athlete.
+ * 
+ * Athors : Neo / Kimia / Floyd
+ * version: (2025/05/18)
  */
 public class Athlete
 {
@@ -17,7 +18,8 @@ public class Athlete
     
 
     /**
-     * Constructor for objects of class Athlete
+     * Constructors a new Athelte with the provided details.
+     * A unique ID is assigned automatically.
      */
     public Athlete(String name, int age, double weight, Gender gender)
     {
@@ -28,7 +30,11 @@ public class Athlete
         this.gender = gender; 
     }
     
-     public int getId() {
+    /**
+     * Gets unique ID of the athlete.
+     * @return athlete ID
+     */
+    public int getId() {
         return id;
     }
     
@@ -40,34 +46,65 @@ public class Athlete
                 "\nGender:" + gender;
     }
     
+    /**
+     *Gets the name of the athlete.
+     *@return name 
+     */
     public String getName() {
         return name; 
     }
+    
+    /**
+     * Sets the name of the athlete. 
+     */
     public void setName(String name) {
         this.name = name; 
     }
 
+     /**
+     * Gets the athletes gender.
+     * @return gender.
+     */
     public Gender getGender() {
         return gender; 
     }
+    
+    /**
+     * Sets the athletes gender. 
+     */
     public void setGender(Gender gender) {
         this.gender = gender; 
     }
 
+     /**
+     * Gets the athletes age.
+     * @return age.
+     */
     public int getAge() {
         return age; 
     }
+     /**
+     * Sets the athletes age.
+     * @return age.
+     */
     public void setAge(int age) { 
         this.age = age;
     }
 
+     /**
+     * Gets the athletes weight.
+     * @return weight.
+     */
     public double getWeight() { 
         return weight;
     }
+    
+    /**
+     * Sets the athletes weight.
+     * @return weight.
+     */
     public void setWeight(double weight) {
         this.weight = weight; 
     }
-
-     
 }
 
