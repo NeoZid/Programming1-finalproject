@@ -266,7 +266,7 @@ public class Application
         Scanner sc = new Scanner(System.in);
         System.out.println("How long did you do it for? (enter in minutes) ");
         duration = sc.nextInt();
-        System.out.println("How many did you do?");
+        System.out.println("How many did you do? (Reps)");
         amount = sc.nextInt();
         caloriesBurned = amount * duration;
         System.out.print("You have burned this amount of calories: " + caloriesBurned);
