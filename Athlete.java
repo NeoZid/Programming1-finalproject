@@ -8,6 +8,8 @@ import java.util.Scanner;
  */
 public class Athlete
 {
+    private static int nextId = 1; // Static counter
+    private final int id;
     private String name;
     private Gender gender;
     private int age;
@@ -19,14 +21,23 @@ public class Athlete
      */
     public Athlete(String name, int age, double weight, Gender gender)
     {
+        this.id = nextId++;// assign unique ID
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.gender = gender; 
     }
     
+     public int getId() {
+        return id;
+    }
+    
     public String toString(){
-        return "\nName:" + name + "\nAge:" + age + "\nWeight:" + weight + "\nGender:" + gender;
+        return "\nID: " + id +
+                "\nName:" + name + 
+                "\nAge:" + age +
+                "\nWeight:" + weight + 
+                "\nGender:" + gender;
     }
     
     public String getName() {

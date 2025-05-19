@@ -35,26 +35,67 @@ public class Application
         System.out.println("What would you like to do today?");
         System.out.println("Select from the following");
         System.out.println("1 - SignUp");
-        System.out.println("2 - ListAthletes");
-        System.out.println("3 - Create Activity");
-        System.out.println("4 - ListActivityHistory");
+        System.out.println("2 - Log In (Returning Athlete)");
+        System.out.println("3 - ListAthletes");
+        System.out.println("4 - Create Activity");
+        System.out.println("5 - ListActivityHistory");
         System.out.println("Type 'quit' to exit");
         switch (scanner.next()) {
             case "1":
                 athleteSignup();
                 break;
             case "2":
+                 loginAthlete();
+                 break;    
+            case "3":
                 listAllAthletes();
                 break;
-            case "3" :
+            case "4" :
                 activityCreation();
                 break;
-            case "4":
+            case "5":
                  listAllActivitiesDone();
                     break;// 
         }
     }
     
+        public void loginAthlete() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your athlete ID: ");
+        int inputId = sc.nextInt();
+        
+        Athlete found = null;
+        for (Athlete a : athletes) {
+            if (a.getId() == inputId) {
+                found = a;
+                break;
+            }
+        }
+        
+        if (found != null) {
+            System.out.println("Welcome back, " + found.getName() + "!");
+        } else {
+            System.out.println("Athlete not found. Did you sign up?");
+        }
+    
+        printWelcome(); // Return to main menu
+    }
+    
+    public boolean isSameAthlete(Athlete a1, Athlete a2) {
+        return a1.getName().equalsIgnoreCase(a2.getName()) &&
+               a1.getAge() == a2.getAge() &&
+               a1.getGender() == a2.getGender();
+    }
+
+        public boolean isDuplicateAthlete(Athlete newAthlete) {
+        for (Athlete existing : athletes) {
+            if (isSameAthlete(existing, newAthlete)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void athleteSignup(){
         String name; 
         int age;
@@ -84,9 +125,18 @@ public class Application
                 System.out.println("Unknown gender selected. Defaulting to OTHER.");
                 gender = Gender.OTHER;
         }
-        Athlete athleteInfo = new Athlete(name, age, weight, gender); 
-        athletes.add(athleteInfo);
-        System.out.println("Sign-up successful!");
+        Athlete athleteInfo = new Athlete(name, age, weight, gender);
+        
+         if (isDuplicateAthlete(athleteInfo)) {
+            System.out.println("Welcome back! You're already signed up.");
+        } else {
+            athletes.add(athleteInfo);
+            System.out.println("Sign-up successful!");
+        }
+        
+        // athletes.add(athleteInfo);
+        // System.out.println("Sign-up successful!");
+         System.out.println("Your athlete ID is: " + athleteInfo.getId());
         printWelcome();
     }
     
