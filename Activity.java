@@ -37,7 +37,6 @@ public class Activity
         this.athlete = athlete;
     }
     
-
     public String toString(){
         return "Name:" + name + 
                "\nMode:" + mode +
@@ -76,11 +75,18 @@ public class Activity
         return name; 
     }
     
+    
+    /**
+     * Returns the transportation mode used in the activity.
+     * 
+     * @return the transportation mode
+     */
+
+
     public transportationMode getMode() {
         return mode; 
     }
     
-
     public double getDistance() { 
         return distance; 
     }
@@ -88,19 +94,20 @@ public class Activity
     public int getDuration() { 
         return duration; 
     }
-    
+
+
     public Athlete getAthlete() { 
         return athlete;
     }
-    
+
      /**
      * Returns the number of calories burned during the activity.
      * 
      * @return calories burned
      */
     public double getCaloriesBurned() {
-    {
+    
         return caloriesBurned;
-    }
+    
     }
 }
