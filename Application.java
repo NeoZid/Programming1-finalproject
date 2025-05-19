@@ -350,13 +350,10 @@ public class Application
     }
     
     public void quit(){
-       
-        String name;
         if (scanner.equals("quit")) {
             scanner.close();
          }
-         System.out.println("Goodbye! Application closed.");
-       
+        System.out.println("Goodbye! Application closed.");
     }
    
      public void activityList()
