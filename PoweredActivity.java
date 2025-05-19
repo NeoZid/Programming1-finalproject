@@ -25,7 +25,7 @@ public class PoweredActivity extends Activity
      * @param athlete the athlete performing the activity
      */
     public PoweredActivity(String name, transportationMode mode, String equipment, double distance, int duration, double caloriesBurned ,Athlete athlete) {
-        super(name, mode, equipment, distance, duration, caloriesBurned/* athlete*/);
+        super(name, mode, equipment, distance, duration, caloriesBurned, athlete);
   
     }
 }

@@ -39,9 +39,7 @@ public class ActivityTest
     public void tearDown()
     {
     }
-<<<<<<< HEAD
-=======
-    
+
     /**
      * Test that an activity is correctly created (name, age, weight and gender).
      */
@@ -57,5 +55,6 @@ public class ActivityTest
         assertEquals(75, activity.getCaloriesBurned());
         assertEquals(null, activity.getAthlete());
     }
->>>>>>> 23d7a59eb8251e0d0453c58d622d4e40d7c32a0a
-}
+
+    }
+

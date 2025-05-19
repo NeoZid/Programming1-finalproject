@@ -37,15 +37,7 @@ public class Activity
         this.athlete = athlete;
     }
     
-<<<<<<< HEAD
-     /**
-     * Returns a string representation of the activity, including its name,
-     * mode, equipment, calories burned, and the associated athlete.
-     * 
-     * @return a formatted string summarizing the activity
-     */
-=======
->>>>>>> 23d7a59eb8251e0d0453c58d622d4e40d7c32a0a
+
     public String toString(){
         return "Name:" + name + 
                "\nMode:" + mode +
@@ -53,15 +45,7 @@ public class Activity
                "\nCaloriesBurned:" + caloriesBurned + 
                "\nAthlete:" + athlete;
     }
-<<<<<<< HEAD
-    
-     /**
-     * Returns the name of the equipment used in the activity.
-     * 
-     * @return the equipment used
-     */
-=======
->>>>>>> 23d7a59eb8251e0d0453c58d622d4e40d7c32a0a
+
     public String getEquipment(){
         return equipment;
     }
@@ -92,66 +76,31 @@ public class Activity
         return name; 
     }
     
-<<<<<<< HEAD
-    
-    /**
-     * Returns the transportation mode used in the activity.
-     * 
-     * @return the transportation mode
-     */
-=======
->>>>>>> 23d7a59eb8251e0d0453c58d622d4e40d7c32a0a
     public transportationMode getMode() {
         return mode; 
     }
     
-<<<<<<< HEAD
-    
-    /**
-     * Returns the distance covered during the activity in kilometers.
-     * 
-     * @return the distance in km
-     */
-=======
->>>>>>> 23d7a59eb8251e0d0453c58d622d4e40d7c32a0a
+
     public double getDistance() { 
         return distance; 
     }
     
-<<<<<<< HEAD
-      /**
-     * Returns the duration of the activity in minutes.
-     * 
-     * @return the duration in minutes
-     */
-=======
->>>>>>> 23d7a59eb8251e0d0453c58d622d4e40d7c32a0a
     public int getDuration() { 
         return duration; 
     }
     
-<<<<<<< HEAD
-     /**
-     * Returns the athlete who performed the activity.
-     * 
-     * @return the associated Athlete object
-     */
-=======
->>>>>>> 23d7a59eb8251e0d0453c58d622d4e40d7c32a0a
     public Athlete getAthlete() { 
         return athlete;
     }
     
-<<<<<<< HEAD
      /**
      * Returns the number of calories burned during the activity.
      * 
      * @return calories burned
      */
     public double getCaloriesBurned() {
-=======
-     public double getCaloriesBurned() {
->>>>>>> 23d7a59eb8251e0d0453c58d622d4e40d7c32a0a
+    {
         return caloriesBurned;
+    }
     }
 }
