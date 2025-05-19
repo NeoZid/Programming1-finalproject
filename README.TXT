@@ -11,7 +11,7 @@ VERSION or DATE: 2025/04/28 0.1.0
 HOW TO START THIS PROJECT: First, we analyzed the project requirements and created a UML 
 digram to design the stucture of our program.
 Then, we translated the digram into Java by creating the main classes, enums, feilds, and methods.
-Now, we are completing the full project by implemting the logic, tesing it
+Now, we are completing the full project by implementing the logic, testing it
 using a driver class, and preparing documentation like the README and Javadoc.
 AUTHORS: Kimia, Neo, Floyd
-USER INSTRUCTIONS: (to be added when methods are created)
+USER INSTRUCTIONS: 
