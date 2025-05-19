@@ -33,11 +33,12 @@ public class Application
         System.out.println("Welcome to StrongAF, an application that records your workout!");
         System.out.println("What would you like to do today?");
         System.out.println("Select from the following");
-        System.out.println("1 - SignUp");
+        System.out.println("1 - Sign Up");
         System.out.println("2 - Log In (Returning Athlete)");
-        System.out.println("3 - ListAthletes");
+        System.out.println("3 - List Athletes");
         System.out.println("4 - Create Activity");
-        System.out.println("5 - ListActivityHistory");
+        System.out.println("5 - List Activity History");
+        System.out.println("6 - Total Distance Travelled");
         System.out.println("Type 'quit' to exit");
         switch (scanner.next()) {
             case "1":
@@ -53,8 +54,11 @@ public class Application
                 activityCreation();
                 break;
             case "5":
-                 listAllActivitiesDone();
-                    break;// 
+                listAllActivitiesDone();
+                break;
+            case "6":
+                calculateDistanceTravelled();
+                break;
         }
     }
     
@@ -62,7 +66,6 @@ public class Application
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter your athlete ID: ");
         int inputId = sc.nextInt();
-        
         Athlete found = null;
         for (Athlete a : athletes) {
             if (a.getId() == inputId) {
@@ -70,13 +73,11 @@ public class Application
                 break;
             }
         }
-        
         if (found != null) {
             System.out.println("Welcome back, " + found.getName() + "!");
         } else {
             System.out.println("Athlete not found. Did you sign up?");
         }
-    
         printWelcome(); // Return to main menu
     }
     
@@ -101,7 +102,6 @@ public class Application
         double weight;
         Gender gender;
         Scanner sc = new Scanner(System.in);
-        
         System.out.println("Enter your name: ");
         name = sc.nextLine();
         System.out.println("Enter your age: ");
@@ -125,21 +125,16 @@ public class Application
                 gender = Gender.OTHER;
         }
         Athlete athleteInfo = new Athlete(name, age, weight, gender);
-        
          if (isDuplicateAthlete(athleteInfo)) {
             System.out.println("Welcome back! You're already signed up.");
         } else {
             athletes.add(athleteInfo);
             System.out.println("Sign-up successful!");
         }
-        
-        // athletes.add(athleteInfo);
-        // System.out.println("Sign-up successful!");
-         System.out.println("Your athlete ID is: " + athleteInfo.getId());
+        System.out.println("Your athlete ID is: " + athleteInfo.getId());
         printWelcome();
     }
-    
-    
+
     public void listAllAthletes(){
         if (athletes.isEmpty()) {
             System.out.println("No athletes registered yet.");
@@ -157,7 +152,6 @@ public class Application
             System.out.println("Please sign up an athlete first.");
             printWelcome();
         }
-        
         Scanner scanner = new Scanner(System.in);
         System.out.println("Creating new activity...");
         System.out.println("Does your activity require an equipment?");
@@ -173,11 +167,8 @@ public class Application
             default:
                 System.out.println("Invalid activity type.");
                 break;
-           
         }
-
         printWelcome();
-        // we do this for all types we have " distance, minutes, athlete by number and etc..."
     }
     
     public void standardActivity(){
@@ -221,10 +212,8 @@ public class Application
         transportationMode mode;
         String equipment;
         Athlete athlete;
-        
-        
         Scanner sc = new Scanner(System.in);
-        System.out.println("How far did you run? ");
+        System.out.println("How far did you run? (enter in km)");
         distance = sc.nextDouble();
         System.out.println("How long did you run for? (enter in minutes) ");
         duration = sc.nextInt();
@@ -234,7 +223,8 @@ public class Application
         name = "Running";
         mode = null;
         equipment = null;
-        Activity running = new Activity (name, mode, equipment, distance, duration, caloriesBurned /*athlete*/);
+        athlete = selectAthlete();
+        Activity running = new Activity (name, mode, equipment, distance, duration, caloriesBurned, athlete);
         activities.add(running);
     }
     
@@ -247,9 +237,8 @@ public class Application
         transportationMode mode;
         String equipment;
         Athlete athlete;
-
         Scanner sc = new Scanner(System.in);
-        System.out.println("How far did you walk? ");
+        System.out.println("How far did you run? (enter in km) ");
         distance = sc.nextDouble();
         System.out.println("How long did you walk for? (enter in minutes) ");
         duration = sc.nextInt();
@@ -259,11 +248,12 @@ public class Application
         name = "Walking";
         mode = null;
         equipment = null;
-        Activity walking = new Activity (name, mode,equipment, distance, duration, caloriesBurned /*athlete*/);
+        athlete = selectAthlete();
+        Activity walking = new Activity (name, mode,equipment, distance, duration, caloriesBurned, athlete);
         activities.add(walking);
     }
     
-    public static void choosePlanks(){
+    public void choosePlanks(){
         int amount;
         int duration;
         double caloriesBurned;
@@ -272,7 +262,6 @@ public class Application
         double distance;
         String equipment;
         Athlete athlete;
-
         Scanner sc = new Scanner(System.in);
         System.out.println("How long did you do it for? (enter in minutes) ");
         duration = sc.nextInt();
@@ -284,11 +273,12 @@ public class Application
         mode = null;
         distance = 0;
         equipment = null;
-        Activity planks = new Activity (name, mode, equipment,distance, duration, caloriesBurned/* athlete*/);
+        athlete = selectAthlete();
+        Activity planks = new Activity (name, mode, equipment,distance, duration, caloriesBurned, athlete);
         activities.add(planks);
     }
     
-    public static void choosePushUps(){
+    public void choosePushUps(){
         int amount;
         int duration;
         double caloriesBurned;
@@ -297,11 +287,10 @@ public class Application
         double distance;
         String equipment;
         Athlete athlete;
-
         Scanner sc = new Scanner(System.in);
         System.out.println("How long did you do it for? (enter in minutes) ");
         duration = sc.nextInt();
-        System.out.println("How many did you do?");
+        System.out.println("How many did you do? (Reps)");
         amount = sc.nextInt();
         caloriesBurned = amount * duration;
         System.out.print("You have burned this amount of calories: " + caloriesBurned);
@@ -309,7 +298,8 @@ public class Application
         mode = null;
         distance = 0;
         equipment = null;
-        Activity pushUps = new Activity (name, mode, equipment, distance, duration, caloriesBurned/*athlete*/);
+        athlete = selectAthlete();
+        Activity pushUps = new Activity (name, mode, equipment, distance, duration, caloriesBurned, athlete);
         activities.add(pushUps);
     }
     
@@ -329,27 +319,25 @@ public class Application
         equipmentList.add("Rollerskates");
         equipmentList.add("Skiis");
         Scanner sc = new Scanner(System.in);
-        
         System.out.print("What equipment would you like to use? We have presets or you can create your own!");
-        System.out.print("\nType the ones in the list OR ");
-        System.out.print("\nType create your own");
+        System.out.print("\n1-Bike, 2-Rollerskates, 3-Skiis, 4-Create your own");
         for (String equipments : equipmentList) {
             System.out.println( "\n" + equipments);
         }
         mode = null;
         name = null;
         switch (sc.next()) {
-            case "Bike":
+            case "1":
                 equipment = "Bike";
                 mode = transportationMode.BIKING;
                 name= "BIKING";
                 break;
-            case "Rollerskates":
+            case "2":
                 equipment = "Rollerskates";
                 mode = transportationMode.ROLLERSKATES;
                 name = "ROLLERSKATES";
                 break;
-            case "Skiis" :
+            case "3" :
                 equipment = "Skiis";
                 mode = transportationMode.SKIING;
                 name = "SKIING";
@@ -366,10 +354,8 @@ public class Application
         }  
         System.out.print("Enter distance (km): ");
         distance = sc.nextDouble();
-        
         System.out.print("Enter duration (minutes): ");
         duration = sc.nextInt();
-        
         athlete = selectAthlete();
         calories = calculateCalories( mode, distance);
         PoweredActivity activityP = new PoweredActivity(name, mode, equipment, distance, duration, calories, athlete);
@@ -400,13 +386,14 @@ public class Application
     }
     
     public void quit(){
+        Scanner scanner = new Scanner (System.in);
         if (scanner.equals("quit")) {
             scanner.close();
          }
         System.out.println("Goodbye! Application closed.");
     }
    
-     public void activityList()
+    public void activityList()
     {
         System.out.println("Regular activies include:");
         for (int i =0; i < activities.size(); i++) {
@@ -425,5 +412,14 @@ public class Application
         }
         printWelcome();
     }
-
+    
+    public void calculateDistanceTravelled(){
+        double totalDistance = 0;
+        for (Activity activity : activities) {
+            totalDistance += activity.getDistance();
+        }
+        System.out.println(totalDistance);
+        printWelcome();
+    }
+    
 }

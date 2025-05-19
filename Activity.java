@@ -19,7 +19,7 @@ public class Activity
      /**
      * Constructor for objects of class Activity
      */
-    public Activity(String name, transportationMode mode, String equipment, double distance, int duration, double caloriesBurned/* Athlete athlete*/ ) {
+    public Activity(String name, transportationMode mode, String equipment, double distance, int duration, double caloriesBurned, Athlete athlete) {
         this.name = name;
         this.mode = mode;
         this.equipment = equipment;
@@ -27,14 +27,11 @@ public class Activity
         this.duration = duration;
         this.caloriesBurned = caloriesBurned;
         this.athlete = athlete;
-        
     }
-    
     
     public String toString(){
         return "Name:" + name + "\nMode:" + mode +"\nEquipmentUsed:" + equipment + "\nCaloriesBurned:" + caloriesBurned + "\nAthlete:" + athlete;
     }
-    
     public String getEquipment(){
         return equipment;
     }
@@ -50,18 +47,23 @@ public class Activity
     public String getName() { 
         return name; 
     }
+    
     public transportationMode getMode() {
         return mode; 
     }
+    
     public double getDistance() { 
         return distance; 
     }
+    
     public int getDuration() { 
         return duration; 
     }
+    
     public Athlete getAthlete() { 
         return athlete;
     }
+    
      public double getCaloriesBurned() {
         return caloriesBurned;
     }

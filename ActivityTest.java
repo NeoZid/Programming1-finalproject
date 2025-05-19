@@ -46,12 +46,13 @@ public class ActivityTest
     @Test
     public void testActivityCreation()
     {
-        Activity activity = new Activity("Rollerskating", transportationMode.ROLLERSKATES, "Rollerskates", 200, 20, 75);
+        Activity activity = new Activity("Rollerskating", transportationMode.ROLLERSKATES, "Rollerskates", 200, 20, 75, null);
         assertEquals("Rollerskating", activity.getName());
         assertEquals(transportationMode.ROLLERSKATES, activity.getMode());
         assertEquals("Rollerskates", activity.getEquipment());
         assertEquals(200, activity.getDistance());
         assertEquals(20, activity.getDuration());
         assertEquals(75, activity.getCaloriesBurned());
+        assertEquals(null, activity.getAthlete());
     }
 }
